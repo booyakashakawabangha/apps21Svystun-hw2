@@ -23,6 +23,6 @@ public class Stack {
         if (list.isEmpty()){
             return null;
         }
-        return list.getTail();
+        return list.getTail().getValue();
     }
 }

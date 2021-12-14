@@ -10,7 +10,7 @@ public class Queue {
         if (list.isEmpty()){
             return null;
         }
-        return list.getHead();
+        return list.getHead().getValue();
     }
 
     public Object dequeue() {
