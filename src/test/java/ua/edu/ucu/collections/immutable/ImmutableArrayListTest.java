@@ -19,7 +19,7 @@ public class ImmutableArrayListTest {
     }
 
     @Test
-    public void testTestToString() {
+    public void testToString() {
         assertEquals("[1, 2, true]", list1.toString());
         assertEquals("[2.5, flower]", list2.toString());
     }

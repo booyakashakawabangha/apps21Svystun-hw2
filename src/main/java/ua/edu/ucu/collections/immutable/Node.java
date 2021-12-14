@@ -5,8 +5,11 @@ public class Node {
     private Node next;
     private Object value;
 
-    public Node() {
+    public Node(Object val) {
+        value = val;
     }
+
+    public Node() {}
 
     @Override
     public String toString() {
