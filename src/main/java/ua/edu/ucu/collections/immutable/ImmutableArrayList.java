@@ -33,7 +33,7 @@ public final class ImmutableArrayList implements ImmutableList {
     @Override
     public ImmutableList add(int index, Object e) {
         Object[] newArray = Arrays.copyOf(array, length + 1);
-        for (int idx = this.length; idx > index; idx--){
+        for (int idx = this.length; idx > index; idx--) {
             newArray[idx] = newArray[idx - 1];
         }
         newArray[index] = e;
@@ -49,10 +49,10 @@ public final class ImmutableArrayList implements ImmutableList {
     public ImmutableList addAll(int index, Object[] c) {
         this.indexInRange(index);
         Object[] newArray = Arrays.copyOf(array, length + c.length);
-        for (int idx = 0; idx < c.length; idx++){
+        for (int idx = 0; idx < c.length; idx++) {
             newArray[index + idx] = c[idx];
         }
-        for (int idx = index + c.length; idx < newArray.length; idx++){
+        for (int idx = index + c.length; idx < newArray.length; idx++) {
             newArray[idx] = array[idx - c.length];
         }
         return new ImmutableArrayList(newArray);
@@ -65,20 +65,20 @@ public final class ImmutableArrayList implements ImmutableList {
     }
 
     @Override
-    public ImmutableList remove(int index) throws IndexOutOfBoundsException{
+    public ImmutableList remove(int index) throws IndexOutOfBoundsException {
         this.indexInRange(index);
         Object[] newArray = new Object[length - 1];
-        for (int idx = 0; idx < index; idx++){
+        for (int idx = 0; idx < index; idx++) {
             newArray[idx] = array[idx];
         }
-        for (int idx = index; idx < length - 1; idx++){
+        for (int idx = index; idx < length - 1; idx++) {
             newArray[idx] = array[idx + 1];
         }
         return new ImmutableArrayList(newArray);
     }
 
     @Override
-    public ImmutableList set(int index, Object e) throws IndexOutOfBoundsException{
+    public ImmutableList set(int index, Object e) {
         this.indexInRange(index);
         Object[] newArray = Arrays.copyOf(array, length);
         newArray[index] = e;
@@ -87,8 +87,8 @@ public final class ImmutableArrayList implements ImmutableList {
 
     @Override
     public int indexOf(Object e) throws NoSuchElementException {
-        for (int idx = 0; idx < length; idx++){
-            if (Objects.equals(e, array[idx])){
+        for (int idx = 0; idx < length; idx++) {
+            if (Objects.equals(e, array[idx])) {
                 return idx;
             }
         }
@@ -113,7 +113,7 @@ public final class ImmutableArrayList implements ImmutableList {
     @Override
     public Object[] toArray() {
         Object[] newArray = new Object[length];
-        for (int idx = 0; idx < length; idx++){
+        for (int idx = 0; idx < length; idx++) {
             newArray[idx] = array[idx];
         }
         return newArray;
@@ -121,7 +121,8 @@ public final class ImmutableArrayList implements ImmutableList {
 
     private boolean indexInRange(int index) throws IndexOutOfBoundsException{
         if (index > length || index < 0){
-            throw new IndexOutOfBoundsException("Index is greater than the index of last element");
+            throw new IndexOutOfBoundsException(
+                    "Index is greater than the index of last element");
         }
         return false;
     }

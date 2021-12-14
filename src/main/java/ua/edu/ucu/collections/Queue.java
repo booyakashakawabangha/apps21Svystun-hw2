@@ -7,14 +7,14 @@ public class Queue {
     private ImmutableLinkedList list = new ImmutableLinkedList();
 
     public Object peek() {
-        if (list.isEmpty()){
+        if (list.isEmpty()) {
             return null;
         }
         return list.getHead().getValue();
     }
 
     public Object dequeue() {
-        if (list.isEmpty()){
+        if (list.isEmpty()) {
             return null;
         }
         Object first = list.getFirst();

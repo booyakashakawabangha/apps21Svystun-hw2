@@ -11,7 +11,7 @@ public class Stack {
     }
 
     public Object pop() {
-        if (list.isEmpty()){
+        if (list.isEmpty()) {
             return null;
         }
         Object last = list.getLast();
@@ -20,7 +20,7 @@ public class Stack {
     }
 
     public Object peek() {
-        if (list.isEmpty()){
+        if (list.isEmpty()) {
             return null;
         }
         return list.getTail().getValue();
